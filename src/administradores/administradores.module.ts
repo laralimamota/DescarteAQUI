@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AdministradoresController } from './controller/administradores.controller';
 import { AdministradoresService } from './service/administradores.service';
-import { SequelizeModule } from '@nestjs/sequelize';
-import { Administradores } from './entities/administradore.entity';
+import { InfraModule } from 'src/infra/infra.module';
+import { AdministradoresRepository } from './repository/administradores.repository';
 
 @Module({
-  imports: [SequelizeModule.forFeature([Administradores])],
+  imports: [InfraModule],
   controllers: [AdministradoresController],
-  providers: [AdministradoresService],
+  providers: [AdministradoresService, AdministradoresRepository],
 })
 export class AdministradoresModule {}

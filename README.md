@@ -1,85 +1,61 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# API de Descarte de Resíduos
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Objetivo
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+A API de Descarte de Resíduos foi desenvolvida para ajudar os usuários a localizar pontos de coleta para materiais recicláveis, eletrônicos e resíduos perigosos. O objetivo é promover a conscientização sobre o descarte correto de resíduos e contribuir para a sustentabilidade ambiental.
 
-## Description
+## Tecnologias Utilizadas
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **Node.js**: Ambiente de execução para o backend.
+- **NestJS**: Framework para a construção da API.
+- **PostgreSQL**: Sistema de gerenciamento de banco de dados utilizado para armazenar informações sobre os pontos de coleta.
+- **Sequelize**: ORM para interagir com o banco de dados PostgreSQL.
+- **Git/GitHub**: Controle de versão e colaboração.
+- **Railway**: Plataforma para o deploy da API.
 
-## Project setup
+## Aprendizados
 
-```bash
-$ npm install
-```
+Durante o desenvolvimento deste projeto, foram adquiridos conhecimentos sobre:
 
-## Compile and run the project
+- Estruturação de APIs RESTful utilizando NestJS.
+- Integração de banco de dados PostgreSQL com Sequelize.
+- Implementação de padrões de repositório para acesso a dados.
+- Documentação de APIs e boas práticas de desenvolvimento.
 
-```bash
-# development
-$ npm run start
 
-# watch mode
-$ npm run start:dev
+### Testando a API
 
-# production mode
-$ npm run start:prod
-```
+A API pode ser testada utilizando ferramentas como Postman, Insomnia ou Curl. Abaixo estão as rotas disponíveis:
 
-## Run tests
+## Informações sobre as Rotas
 
-```bash
-# unit tests
-$ npm run test
+### Pontos de Coleta
 
-# e2e tests
-$ npm run test:e2e
+- **GET /pontos-coleta**
+  - **Descrição**: Retorna todos os pontos de coleta.
+  - **Resposta**: Lista de pontos de coleta.
 
-# test coverage
-$ npm run test:cov
-```
+- **GET /pontos-coleta/:id**
+  - **Descrição**: Retorna um ponto de coleta específico pelo ID.
+  - **Parâmetros**: `id` - ID do ponto de coleta.
+  - **Resposta**: Objeto do ponto de coleta.
 
-## Resources
+- **POST /pontos-coleta**
+  - **Descrição**: Cria um novo ponto de coleta.
+  - **Corpo da Requisição**: JSON com os dados do ponto de coleta.
+  - **Resposta**: Objeto do ponto de coleta criado.
 
-Check out a few resources that may come in handy when working with NestJS:
+- **PUT /pontos-coleta/:id**
+  - **Descrição**: Atualiza um ponto de coleta existente.
+  - **Parâmetros**: `id` - ID do ponto de coleta.
+  - **Corpo da Requisição**: JSON com os dados atualizados.
+  - **Resposta**: Objeto do ponto de coleta atualizado.
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+- **DELETE /pontos-coleta/:id**
+  - **Descrição**: Remove um ponto de coleta pelo ID.
+  - **Parâmetros**: `id` - ID do ponto de coleta.
+  - **Resposta**: Confirmação da remoção.
 
-## Support
+### Link da API no Railway
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+- **Link da API**: *Será disponibilizado após o deploy.*
