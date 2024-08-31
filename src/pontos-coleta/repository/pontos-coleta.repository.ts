@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { PontosColeta } from '../entities/pontos-coleta.entity';
+import { PontosColeta } from './entities/pontos-coleta.entity';
 import { BetaConnection } from 'src/infra/database/connections/beta.connection';
 
 @Injectable()

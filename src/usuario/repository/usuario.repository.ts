@@ -1,24 +1,24 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { Usuarios } from '../entities/usuario.entity';
+import { Usuario } from './entities/usuario.entity';
 import { BetaConnection } from 'src/infra/database/connections/beta.connection';
 
 @Injectable()
-export class UsuariosRepository {
+export class UsuarioRepository {
   constructor(@Inject('BETA_CONNECTION') private readonly db: BetaConnection) {}
 
-  async findAll(): Promise<Usuarios[]> {
+  async findAll(): Promise<Usuario[]> {
     return await this.db.sequelize.models['Usuarios'].findAll()[0];
   }
 
-  async findOne(id: number): Promise<Usuarios> {
+  async findOne(id: number): Promise<Usuario> {
     return await this.db.sequelize.models['Usuarios'].findByPk(id)[0];
   }
 
-  async create(data: Partial<Usuarios>): Promise<Usuarios> {
+  async create(data: Partial<Usuario>): Promise<Usuario> {
     return await this.db.sequelize.models['Usuarios'].create(data)[0];
   }
 
-  async update(id: number, data: Partial<Usuarios>): Promise<Usuarios> {
+  async update(id: number, data: Partial<Usuario>): Promise<Usuario> {
     await this.db.sequelize.models['Usuarios'].update(data, { where: { id } });
     return this.findOne(id);
   }

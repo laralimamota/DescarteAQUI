@@ -2,9 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { Sequelize } from 'sequelize-typescript';
 import { DatabaseConnection } from '../config/databaseConnection.config';
 import { ConfigService } from '@nestjs/config';
-import { Usuarios } from 'src/usuario/entities/usuario.entity';
-import { PontosColeta } from 'src/pontos-coleta/entities/pontos-coleta.entity';
-import { Administradores } from 'src/administradores/entities/administradore.entity';
+import { PontosColeta } from 'src/pontos-coleta/repository/entities/pontos-coleta.entity';
+import { Usuario } from 'src/usuario/repository/entities/usuario.entity';
 
 @Injectable()
 export class BetaConnection extends DatabaseConnection {
@@ -26,7 +25,7 @@ export class BetaConnection extends DatabaseConnection {
       username: this.username,
       password: this.password,
       database: this.database,
-      models: [Usuarios, PontosColeta, Administradores],
+      models: [Usuario, PontosColeta],
       logging: false,
     });
     this.connect();

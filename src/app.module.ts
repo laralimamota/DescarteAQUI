@@ -8,7 +8,6 @@ import { LoggerInterceptor } from './infra/middleware/loggerInterceptor';
 import { TraceIdMiddleware } from './infra/middleware/traceIdMiddleware';
 import { UsuarioModule } from './usuario/usuario.module';
 import { PontosColetaModule } from './pontos-coleta/pontos-coleta.module';
-import { AdministradoresModule } from './administradores/administradores.module';
 
 @Module({
   imports: [
@@ -21,13 +20,11 @@ import { AdministradoresModule } from './administradores/administradores.module'
     }),
     UsuarioModule,
     PontosColetaModule,
-    AdministradoresModule,
   ],
   controllers: [],
   exports: [InfraModule],
   providers: [
     UsuarioModule,
-    AdministradoresModule,
     PontosColetaModule,
     {
       provide: APP_INTERCEPTOR,

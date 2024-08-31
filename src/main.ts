@@ -35,7 +35,6 @@ async function bootstrap() {
       scheme: 'bearer',
       bearerFormat: 'JWT',
     })
-    .addTag('Beta', '')
     .build();
 
   const document = SwaggerModule.createDocument(app, configSwagger);

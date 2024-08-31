@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PontosColeta } from '../entities/pontos-coleta.entity';
+import { PontosColeta } from '../repository/entities/pontos-coleta.entity';
 
 @Injectable()
 export class PontosColetaService {
