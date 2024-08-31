@@ -1,5 +1,5 @@
 import { Column, Model, Table, HasMany } from 'sequelize-typescript';
-import { PontosColeta } from 'src/pontos-coleta/entities/pontos-coleta.entity';
+import { PontosColeta } from 'src/pontos-coleta/repository/entities/pontos-coleta.entity';
 
 @Table
 export class Usuario extends Model<Usuario> {
