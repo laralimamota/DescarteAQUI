@@ -1,4 +1,4 @@
-# API de Descarte de Resíduos
+# DescarteAQUI - API de Descarte de Resíduos
 
 ## Objetivo
 
