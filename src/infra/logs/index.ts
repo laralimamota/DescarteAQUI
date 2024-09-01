@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production') {
   index = productionLogger();
 }
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'dev') {
   index = devLogger();
 }
 

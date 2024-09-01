@@ -7,9 +7,11 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { Usuario } from '../repository/entities/usuario.entity';
 import { UsuarioService } from '../service/usuario.service';
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { UsuarioResponseDto } from './dto/usuario.response.dto';
+import { UsuarioCreateDto } from './dto/create-usuario.dto';
+import { UsuarioUpdateDto } from './dto/update-usuario.dto';
 
 @ApiTags('Usuário')
 @Controller('usuarios')
@@ -18,47 +20,46 @@ export class UsuarioController {
 
   @Get()
   @ApiOperation({
-    summary: '',
+    summary: 'Busca todos os usuários cadastrados',
   })
   @ApiResponse({
     status: 200,
-    description: '',
-    type: Usuario,
+    type: UsuarioResponseDto,
     isArray: true,
   })
-  async findAll(): Promise<Usuario[]> {
+  async findAll(): Promise<UsuarioResponseDto[]> {
     return this.usuarioService.findAll();
   }
 
   @Get(':id')
   @ApiOperation({
-    summary: '',
+    summary: 'Busca um usuário pela chave primária,',
   })
   @ApiResponse({
     status: 200,
     description: '',
-    type: Usuario,
+    type: UsuarioResponseDto,
     isArray: false,
   })
-  async findOne(@Param('id') id: number): Promise<Usuario> {
-    return this.usuarioService.findOne(id);
+  async findOne(@Param('id') id: number): Promise<UsuarioResponseDto> {
+    return this.usuarioService.findOneByPk(id);
   }
 
   @Post()
   @ApiOperation({
-    summary: '',
+    summary: 'Registra um novo usuário.',
   })
   @ApiResponse({
     status: 201,
-    description: '',
   })
-  async create(@Body() usuariosData: Usuario): Promise<Usuario> {
-    return this.usuarioService.create(usuariosData);
+  async create(@Body() usuariosData: UsuarioCreateDto): Promise<void> {
+    await this.usuarioService.create(usuariosData);
+    return;
   }
 
   @Put(':id')
   @ApiOperation({
-    summary: '',
+    summary: 'Atualiza o cadastro de um usuário.',
   })
   @ApiResponse({
     status: 200,
@@ -66,20 +67,21 @@ export class UsuarioController {
   })
   async update(
     @Param('id') id: number,
-    @Body() usuariosData: Usuario,
-  ): Promise<Usuario> {
-    return this.usuarioService.update(id, usuariosData);
+    @Body() usuarioUpdateDto: UsuarioUpdateDto,
+  ): Promise<void> {
+    await this.usuarioService.update(id, usuarioUpdateDto);
+    return;
   }
 
   @Delete(':id')
   @ApiOperation({
-    summary: '',
+    summary: 'Exclui o cadastro de um usuário.',
   })
   @ApiResponse({
     status: 200,
-    description: '',
   })
   async remove(@Param('id') id: number): Promise<void> {
-    return this.usuarioService.remove(id);
+    await this.usuarioService.remove(id);
+    return;
   }
 }

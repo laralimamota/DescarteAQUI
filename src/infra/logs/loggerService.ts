@@ -7,7 +7,6 @@ interface requestParams {
   body?: any;
   params?: any;
   query?: any;
-  userAgent?: any;
   origin?: string;
 }
 
@@ -15,8 +14,6 @@ interface logMessageTrace extends LogMessage {
   traceId: string;
   context: string;
   path: string;
-  user: string;
-  token: string;
   request: requestParams;
 }
 
@@ -33,8 +30,6 @@ export class LoggerService {
       return {
         context: 'RequestContext.currentContext is null',
         request: {},
-        token: 'null',
-        user: 'null',
         path: 'null',
         traceId: 'null',
       } as logMessageTrace;
@@ -42,9 +37,6 @@ export class LoggerService {
 
     const traceId = RequestContext.currentContext.req['traceId'];
     const path = RequestContext.currentContext.req.url;
-    const user = RequestContext.currentContext.req?.usuario?.loginsat || 'null';
-    const token =
-      RequestContext.currentContext.req.headers.authorization || 'null';
     const request: requestParams = {
       body: RequestContext.currentContext.req.body,
       params: RequestContext.currentContext.req.params,
@@ -55,8 +47,6 @@ export class LoggerService {
       ...logMessage,
       traceId,
       path,
-      user,
-      token,
       request,
       context: this.context,
     };

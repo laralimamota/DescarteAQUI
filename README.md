@@ -60,6 +60,12 @@ A API pode ser testada utilizando ferramentas como Postman, Insomnia ou Curl. Ab
 
 - **Link da API**: *Será disponibilizado após o deploy.*
 
-<p align="center">
+<div style="display:flex; flex-direction:row">
+<div align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+</div>
+
+<div align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="assets/reprograma-fundos-claros.png" alt="logo reprograma" width="300"></a>
+</div>
+</div>

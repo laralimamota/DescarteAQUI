@@ -1,10 +1,26 @@
-import { Column, Model, Table, HasMany } from 'sequelize-typescript';
-import { PontosColeta } from 'src/pontos-coleta/repository/entities/pontos-coleta.entity';
+import {
+  Column,
+  Model,
+  PrimaryKey,
+  Table,
+  AutoIncrement,
+} from 'sequelize-typescript';
 
-@Table
+@Table({
+  tableName: 'usuario',
+  timestamps: false,
+})
 export class Usuario extends Model<Usuario> {
+  @PrimaryKey
+  @AutoIncrement
+  @Column
+  id: number;
+
   @Column
   nome: string;
+
+  @Column
+  cpf: string;
 
   @Column
   email: string;
@@ -13,8 +29,5 @@ export class Usuario extends Model<Usuario> {
   senha: string;
 
   @Column
-  dataCriacao: Date;
-
-  @HasMany(() => PontosColeta)
-  pontosColeta: PontosColeta[];
+  data_criacao: Date;
 }

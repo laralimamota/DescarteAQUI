@@ -23,18 +23,13 @@ async function bootstrap() {
     new UnauthorizedFilter(new LoggerService()),
   );
   dotenv.config({
-    path: `${process.cwd()}/config/env/${process.env.NODE_ENV || 'development'}.env`,
+    path: `${process.cwd()}/config/env/${process.env.NODE_ENV || 'dev'}.env`,
   });
 
   const configSwagger = new DocumentBuilder()
     .setTitle('')
     .setDescription('')
     .setVersion('1.0')
-    .addSecurity('bearer', {
-      type: 'http',
-      scheme: 'bearer',
-      bearerFormat: 'JWT',
-    })
     .build();
 
   const document = SwaggerModule.createDocument(app, configSwagger);
