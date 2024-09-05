@@ -1,20 +1,10 @@
 <p align="center">
-  <a href="http://nestjs.com/" target="_blank">
-    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
-  </a>
-  <a href="https://nodejs.org/" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js Logo" width="120" />
-  </a>
-  <a href="https://www.postgresql.org/" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" width="120" alt="PostgreSQL Logo" />
-  </a>
-  <a href="https://sequelize.org/" target="_blank">
-    <img src="https://avatars.githubusercontent.com/u/3591786?s=200&v=4" width="120" alt="Sequelize Logo" />
-  </a>
-  <a href="https://railway.app/" target="_blank">
-    <img src="https://railway.app/brand/logo-light.png" width="120" alt="Railway Logo" />
+  <a href="https://github.com/laralimamota/DescarteAQUI" target="_blank">
+    <img src="[https://www.example.com/imagem-tema.png](https://github.com/user-attachments/assets/044c40b6-4782-4182-93ec-5f3cf9677b70)" width="300" alt="DescarteAQUI Logo" />
   </a>
 </p>
+
+
 
 <h1 align="center">DescarteAQUI - API de Descarte de Resíduos</h1>
 
