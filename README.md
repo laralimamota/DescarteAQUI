@@ -48,5 +48,5 @@ A API está hospedada na plataforma **Railway**, permitindo fácil acesso e esca
 ---
 
 <p align="center">
-  Desenvolvido por Lara | <a href="https://github.com/laralimamota">GitHub</a>
+  Desenvolvido por <a href="https://github.com/laralimamota">Lara :)</a>
 </p>
